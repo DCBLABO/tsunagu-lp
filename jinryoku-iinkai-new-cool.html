@@ -13,7 +13,8 @@
     min-height: 100vh;
     font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Helvetica Neue", Arial, sans-serif;
     background: linear-gradient(135deg, #fff6ec 0%, #ffe9d6 100%);
-    color: #4a3728;
+    color: #3d2b1a;
+    font-weight: 500;
     padding: 40px 16px;
   }
   .wrap {
@@ -34,39 +35,54 @@
   }
   .eyebrow {
     display: inline-block;
-    font-size: 0.85rem;
-    letter-spacing: 0.08em;
-    color: #b5651d;
-    background: #ffe4c4;
-    padding: 4px 14px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: #7a3a05;
+    background: #ffd9a0;
+    padding: 5px 16px;
     border-radius: 999px;
     margin-bottom: 16px;
   }
   h1 {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
+    font-weight: 800;
     line-height: 1.5;
     margin: 0 0 8px;
-    color: #b5651d;
+    color: #a34d0a;
   }
   h2 {
-    font-size: 1.15rem;
-    margin: 0 0 14px;
-    color: #b5651d;
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin: 0 0 6px;
+    color: #a34d0a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .soft-divider {
+    height: 4px;
+    width: 64px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #ffb85e, #ff8f5e);
+    margin: 0 0 18px;
   }
   p {
     font-size: 1rem;
+    font-weight: 500;
     line-height: 1.9;
     margin: 0 0 12px;
-    color: #6b5544;
+    color: #4a3524;
   }
   p:last-child {
     margin-bottom: 0;
   }
   .quote {
     font-size: 1.05rem;
+    font-weight: 600;
     line-height: 1.9;
-    color: #a6602a;
-    border-left: 3px solid #f0b072;
+    color: #8a3d0a;
+    border-left: 4px solid #ff8f5e;
     padding-left: 16px;
     margin: 0 0 16px;
   }
@@ -75,19 +91,72 @@
     border-radius: 16px;
     padding: 18px 20px;
     font-size: 0.95rem;
-    color: #8a6a4c;
+    font-weight: 600;
+    color: #5c4530;
     line-height: 1.8;
+  }
+  .schedule {
+    list-style: none;
+    margin: 16px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .schedule li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: #fff6ec;
+    border-radius: 12px;
+    padding: 10px 16px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #4a2f1c;
+  }
+  .schedule .tag {
+    flex-shrink: 0;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 999px;
+  }
+  .tag.lecture {
+    background: #ffd9a0;
+    color: #7a3a05;
+  }
+  .tag.review {
+    background: #cdeac0;
+    color: #2f5c1c;
+  }
+  .zoom-box {
+    background: #eef8ea;
+    border: 2px dashed #a8d68f;
+    border-radius: 16px;
+    padding: 18px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #33532a;
+    line-height: 1.9;
+    margin-top: 8px;
+  }
+  .zoom-box a {
+    color: #2f6b1f;
+    font-weight: 700;
+    word-break: break-all;
   }
   .cta {
     text-align: center;
   }
   .cta p {
-    color: #6b5544;
+    color: #4a3524;
   }
   footer {
     text-align: center;
     font-size: 0.8rem;
-    color: #a68a72;
+    font-weight: 500;
+    color: #8a6a4c;
     padding: 8px 0 0;
   }
   @media (max-width: 480px) {
@@ -95,7 +164,12 @@
       padding: 28px 22px;
     }
     h1 {
-      font-size: 1.35rem;
+      font-size: 1.4rem;
+    }
+    .schedule li {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
     }
   }
 </style>
@@ -103,8 +177,8 @@
 <body>
   <div class="wrap">
     <div class="card hero">
-      <span class="eyebrow">新クール 参加者募集中</span>
-      <h1>人間力向上委員会<br>新クール、参加者募集中</h1>
+      <span class="eyebrow">🌱 新クール 参加者募集中</span>
+      <h1>人間力向上委員会<br>新クールスタート！🎉</h1>
     </div>
 
     <div class="card">
@@ -122,7 +196,8 @@
     </div>
 
     <div class="card">
-      <h2>委員会について</h2>
+      <h2>🌟 人間力向上委員会について</h2>
+      <div class="soft-divider"></div>
       <p>
         人間力向上委員会は、年間を通じて4つのクールに分かれて進む学習プログラムです。
         各クールごとにテーマを持ちながら、メンバー同士で学び合い、考え合う時間を積み重ねていきます。
@@ -130,21 +205,43 @@
     </div>
 
     <div class="card">
-      <h2>今回の募集について</h2>
+      <h2>📅 今回の募集について</h2>
+      <div class="soft-divider"></div>
       <p>
-        このたび、次のクールの参加者を募集します。
+        このたび、次のクールの参加者を募集します。今回のスケジュールは以下の通りです。
       </p>
-      <div class="note-box">
-        開催時期・期間・お申込み締切などの詳細スケジュールは、現在調整中です。<br>
-        決まり次第、あらためてご案内しますので、今しばらくお待ちください。
+      <ul class="schedule">
+        <li><span>7月6日(月) 21:00〜22:30</span><span class="tag lecture">講座</span></li>
+        <li><span>7月8日(水) 21:00〜22:00</span><span class="tag review">振り返り</span></li>
+        <li><span>7月20日(月) 21:00〜22:30</span><span class="tag lecture">講座</span></li>
+        <li><span>7月22日(水) 21:00〜22:00</span><span class="tag review">振り返り</span></li>
+        <li><span>8月3日(月) 21:00〜22:30</span><span class="tag lecture">講座</span></li>
+        <li><span>8月5日(水) 21:00〜22:00</span><span class="tag review">振り返り</span></li>
+        <li><span>8月17日(月) 21:00〜22:30</span><span class="tag lecture">講座</span></li>
+        <li><span>8月19日(水) 21:00〜22:00</span><span class="tag review">振り返り</span></li>
+        <li><span>8月31日(月) 21:00〜22:30</span><span class="tag lecture">講座</span></li>
+        <li><span>9月2日(水) 21:00〜22:00</span><span class="tag review">振り返り</span></li>
+        <li><span>9月14日(月) 21:00〜22:30</span><span class="tag lecture">講座</span></li>
+        <li><span>9月16日(水) 21:00〜22:00</span><span class="tag review">振り返り</span></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>🙌 参加方法</h2>
+      <div class="soft-divider"></div>
+      <p>
+        ZOOMに直接参加して、参加意思をお伝えいただくか、各自のサポートグループにご連絡ください♪
+      </p>
+      <div class="zoom-box">
+        🔗 URL: <a href="https://us06web.zoom.us/j/82156773541?pwd=WGt6cEdnTWdicnprYjFSdzVCRllCUT09" target="_blank" rel="noopener">https://us06web.zoom.us/j/82156773541?pwd=WGt6cEdnTWdicnprYjFSdzVCRllCUT09</a><br>
+        ミーティングID: 821 5677 3541<br>
+        パスコード: 1234
       </div>
     </div>
 
     <div class="card cta">
-      <h2>参加方法・お問い合わせ</h2>
-      <p>
-        具体的な参加方法については、詳細が固まり次第あらためてご案内します。
-      </p>
+      <h2 style="justify-content: center;">🤝 お問い合わせ</h2>
+      <div class="soft-divider" style="margin-left: auto; margin-right: auto;"></div>
       <p>
         「ちょっと気になるな」「話だけ聞いてみたいな」という方は、構える必要はありません。<br>
         まずは気軽に一声かけてください。それだけで大丈夫です。

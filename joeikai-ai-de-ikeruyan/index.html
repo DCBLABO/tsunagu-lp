@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<!--
+PUBLICATION CHECKLIST
+
+[x] 正式開催日は正しいか
+[x] 開場・終了時刻は正しいか
+[x] 会場名・アクセスは正しいか
+[x] 料金は申込みページと一致しているか
+[x] 定員300名は正式情報か
+[x] 第1回の開催地・定員・実績表現は正しいか
+[x] 宮田博文氏の登壇・講演内容は確定しているか
+[x] 主催者名義は正式表記か
+[x] flyer.pngが公開環境で表示されるか
+[x] 申込みリンクが正しく開くか
+[x] オープンチャットリンクが正しく開くか
+[x] 人間による公開承認を受けたか
+-->
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>『愛でいけるやん〜宮田運輸がひらく道〜』上映会＆講演会 | TSUNAGU DAO</title>
+<meta name="description" content="TSUNAGU DAO映画上映会 第二回『愛でいけるやん〜宮田運輸がひらく道〜』上映会＆講演会。2026年11月1日(日) 枚方市総合文化芸術センターにて開催。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700;800&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#3D5D82;
+    --red:#D6432C;
+    --red-soft:#E2704F;
+    --cream:#FDF8EE;
+    --cream-warm:#F6E6C4;
+    --orange:#F0A24F;
+    --ink:#3A2F22;
+    --ink-soft:#6E6151;
+    --line:rgba(43,36,28,0.12);
+    --max:960px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Zen Maru Gothic', sans-serif;
+    line-height:1.9;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.mincho{
+    font-family:'Shippori Mincho B1', serif;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+
+  /* ---------- Route thread motif ---------- */
+  .route{
+    position:relative;
+  }
+  .route::before{
+    content:"";
+    position:absolute;
+    left:24px;
+    top:0;
+    bottom:0;
+    width:2px;
+    background:repeating-linear-gradient(
+      to bottom,
+      var(--red) 0 6px,
+      transparent 6px 14px
+    );
+    opacity:0.55;
+  }
+  @media(min-width:720px){
+    .route::before{ left:50%; margin-left:-1px; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    background:linear-gradient(180deg, #FFFDF8 0%, var(--cream) 45%, var(--cream-warm) 100%);
+    color:var(--ink);
+    overflow:hidden;
+    padding:0 0 64px;
+  }
+  .hero-flyer{
+    position:relative;
+    max-width:520px;
+    margin:0 auto;
+    padding:40px 20px 0;
+  }
+  .hero-flyer img{
+    border-radius:6px;
+    box-shadow:0 30px 60px -20px rgba(61,93,130,0.35);
+  }
+  .hero-eyebrow{
+    text-align:center;
+    letter-spacing:.28em;
+    font-size:.72rem;
+    color:var(--red);
+    opacity:.9;
+    margin:36px 0 10px;
+    text-transform:uppercase;
+    font-weight:700;
+  }
+  .hero-title{
+    text-align:center;
+    font-size:clamp(1.9rem, 6vw, 3.2rem);
+    font-weight:800;
+    margin:0 20px 12px;
+    line-height:1.35;
+    color:var(--navy);
+  }
+  .hero-title .film{
+    display:block;
+    color:var(--red);
+    font-size:1.15em;
+    margin-top:6px;
+  }
+  .hero-sub{
+    text-align:center;
+    font-size:1rem;
+    color:var(--ink-soft);
+    margin:0 20px 40px;
+  }
+  .hero-scroll{
+    text-align:center;
+    font-size:.75rem;
+    letter-spacing:.15em;
+    color:var(--ink-soft);
+    opacity:.7;
+  }
+  .hero-scroll::after{
+    content:"";
+    display:block;
+    width:1px;height:32px;
+    background:var(--ink-soft);
+    opacity:.4;
+    margin:10px auto 0;
+    animation:drop 1.8s ease-in-out infinite;
+  }
+  @keyframes drop{
+    0%{transform:scaleY(0);transform-origin:top;opacity:0;}
+    40%{transform:scaleY(1);transform-origin:top;opacity:.6;}
+    60%{opacity:.6;}
+    100%{transform:scaleY(1);transform-origin:bottom;opacity:0;}
+  }
+
+  /* ---------- Countdown ---------- */
+  .countdown-band{
+    background:var(--red);
+    color:var(--cream);
+    text-align:center;
+    padding:22px 16px;
+  }
+  .countdown-band .label{
+    font-size:.78rem;
+    letter-spacing:.1em;
+    opacity:.9;
+  }
+  .countdown-band .num{
+    font-family:'Shippori Mincho B1', serif;
+    font-weight:800;
+    font-size:clamp(2.2rem,7vw,3rem);
+    line-height:1.1;
+    margin-top:2px;
+  }
+  .countdown-band .num span{font-size:.5em; margin-left:4px; font-weight:600;}
+
+  /* ---------- Sections ---------- */
+  main{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 20px;
+  }
+  section.chapter{
+    position:relative;
+    padding:64px 0 64px 56px;
+  }
+  @media(min-width:720px){
+    section.chapter{
+      padding:88px 0;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:56px;
+      align-items:start;
+    }
+    section.chapter:nth-child(odd) .chapter-text{grid-column:1;}
+    section.chapter:nth-child(even) .chapter-text{grid-column:2;}
+  }
+  .chapter-marker{
+    position:absolute;
+    left:24px;
+    top:70px;
+    transform:translate(-50%,-50%);
+    width:38px;height:38px;
+    border-radius:50%;
+    background:var(--cream);
+    border:2px solid var(--red);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Shippori Mincho B1',serif;
+    font-weight:700;
+    color:var(--red);
+    font-size:.95rem;
+  }
+  @media(min-width:720px){
+    .chapter-marker{ left:50%; top:96px; }
+  }
+  .chapter-eyebrow{
+    font-size:.75rem;
+    letter-spacing:.14em;
+    color:var(--red);
+    font-weight:700;
+    margin-bottom:10px;
+  }
+  .chapter h2{
+    font-size:clamp(1.25rem,3.4vw,1.7rem);
+    line-height:1.55;
+    margin:0 0 22px;
+    color:var(--navy);
+    font-weight:700;
+  }
+  .chapter p{
+    margin:0 0 18px;
+    color:var(--ink-soft);
+    font-size:.98rem;
+  }
+  .chapter p:last-child{margin-bottom:0;}
+  .quote-block{
+    background:var(--cream-warm);
+    border-left:3px solid var(--orange);
+    padding:16px 18px;
+    margin:22px 0;
+    font-size:.92rem;
+    color:var(--ink);
+    border-radius:2px;
+  }
+  .quote-block .who{
+    display:block;
+    margin-top:8px;
+    font-size:.78rem;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- Info card ---------- */
+  .info-wrap{
+    padding:20px 0 80px 56px;
+  }
+  @media(min-width:720px){
+    .info-wrap{padding:20px 0 100px;}
+  }
+  .info-card{
+    background:#FFFDF8;
+    color:var(--ink);
+    border-radius:14px;
+    padding:36px 28px;
+    max-width:640px;
+    margin:0 auto;
+    border:2px solid var(--navy);
+    box-shadow:0 24px 48px -28px rgba(61,93,130,0.4);
+  }
+  .info-card h3{
+    font-size:1.5rem;
+    margin:0 0 22px;
+    text-align:center;
+    color:var(--navy);
+  }
+  .info-card h3 small{
+    display:block;
+    font-family:'Zen Maru Gothic',sans-serif;
+    font-size:.7rem;
+    letter-spacing:.2em;
+    color:var(--red);
+    font-weight:700;
+    margin-bottom:8px;
+  }
+  .info-grid{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:12px 20px;
+    font-size:.92rem;
+  }
+  .info-grid dt{
+    color:var(--red);
+    font-weight:700;
+    white-space:nowrap;
+  }
+  .info-grid dd{
+    margin:0;
+    color:var(--ink-soft);
+  }
+  .cta-row{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-top:28px;
+  }
+  @media(min-width:520px){
+    .cta-row{flex-direction:row;}
+  }
+  .btn{
+    flex:1;
+    text-align:center;
+    padding:15px 18px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:.92rem;
+    text-decoration:none;
+    transition:transform .15s ease, box-shadow .15s ease;
+    display:inline-block;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{
+    background:var(--orange);
+    color:#fff;
+    box-shadow:0 10px 24px -8px rgba(240,162,79,0.55);
+    font-size:1.4rem;
+    min-height:76px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:18px;
+  }
+  .btn-secondary{
+    background:transparent;
+    border:1.5px solid var(--navy);
+    color:var(--navy);
+  }
+
+  /* ---------- Credits ---------- */
+  footer{
+    background:var(--cream-warm);
+    color:var(--ink-soft);
+    text-align:center;
+    padding:44px 20px 32px;
+    font-size:.76rem;
+    line-height:2.1;
+  }
+  footer .org{
+    font-family:'Shippori Mincho B1',serif;
+    font-size:.95rem;
+    color:var(--navy);
+    letter-spacing:.08em;
+    margin-bottom:14px;
+    font-weight:700;
+  }
+
+  /* ---------- Reveal on scroll ---------- */
+  .reveal{
+    opacity:0;
+    transform:translateY(18px);
+    transition:opacity .7s ease, transform .7s ease;
+  }
+  .reveal.is-visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+    .hero-scroll::after{animation:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-flyer reveal">
+    <img src="flyer.png" alt="『愛でいけるやん〜宮田運輸がひらく道〜』上映会＆講演会 チラシ">
+  </div>
+  <p class="hero-eyebrow">TSUNAGU DAO 映画上映会 第二回</p>
+  <h1 class="hero-title">心と心が繋がる、自主上映会<span class="film">『愛でいけるやん〜宮田運輸がひらく道〜』</span></h1>
+  <p class="hero-sub">2026年11月1日(日) 枚方市総合文化芸術センター　限定300名</p>
+  <p class="hero-scroll">SCROLL</p>
+</div>
+
+<div class="countdown-band">
+  <div class="label">開催まであと</div>
+  <div class="num" id="countdown">―<span>日</span></div>
+</div>
+
+<main class="route">
+
+  <section class="chapter">
+    <div class="chapter-marker">①</div>
+    <div class="chapter-text reveal">
+      <p class="chapter-eyebrow">CHAPTER 01</p>
+      <h2>TSUNAGU DAO映画上映会と『愛でいけるやん〜宮田運輸がひらく道〜』の出会い</h2>
+      <p>TSUNAGU DAO上映会とは、TSUNAGU DAOコミュニティが2024年12月にスタートしたプロジェクトです。「自主上映映画作品を通して、感動を分かち合い、人生で大切にしたい想いや生き方を多くの人たちと共有していきたい」という気持ちで始まりました。</p>
+      <p>このプロジェクトの発案者は小林紀子さん、通称キコさん。企業の経営幹部として数百人の部下を束ね、多店舗展開する飲食事業の新規出店部門を担っていた経歴があり、一方で主婦業や子育て、親の介護など、たくさんの人生経験をお持ちのTSUNAGU DAOメンバーです。</p>
+      <p>そのキコさんからドキュメンタリー映画『愛でいけるやん〜宮田運輸がひらく道〜』をぜひ上映したいと提案があり、初めて企画したのが2025年7月。死亡事故を起こした運送会社の社長が、経営者としての姿勢や考え方を180度転換し、再起していく真実のストーリーを描いたドキュメンタリー作品です。第一回は高槻市で160名の会場で開催し、大盛況となりました。</p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-marker">②</div>
+    <div class="chapter-text reveal">
+      <p class="chapter-eyebrow">CHAPTER 02</p>
+      <h2>経営者、従業員、主婦。どんな立場でも、何度見ても感動と学びがある</h2>
+      <p>開催後のアンケートでは、さまざまな立場の方から感動のコメントをいただきました。</p>
+      <div class="quote-block">「自社での従業員との関係性や、会社としての方向性について学びがあった」<span class="who">経営者の方</span></div>
+      <div class="quote-block">「被害者の義母の言葉に親として共感し、心に響いた」<span class="who">主婦の方</span></div>
+      <div class="quote-block">「人（お客様）を想うことの大切さを再認識できた」<span class="who">営業職の方</span></div>
+      <p>上映会の運営チームとして「経営者に限らず、従業員として働く方、子を持つ親の立場として主婦の方々にも深い感動や学びを受け取っていただける作品だ」と改めて感じました。ならばもっとたくさんの方々とこの作品を共有し、想いを分かち合いたい。今年2026年は定員を拡大して、300名で開催しよう！と、第二回『愛でいけるやん』上映会へのTSUNAGU DAOの挑戦が始まりました。</p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-marker">③</div>
+    <div class="chapter-text reveal">
+      <p class="chapter-eyebrow">CHAPTER 03</p>
+      <h2>開催日に向けて、300名への挑戦が始まっています</h2>
+      <p>「人を信じ切ること」という宮田社長（現在は会長）の言葉に込められた深い想い。映画のためのストーリーではなく、本当にその言葉通りに行動し、生きて実践して来られたからこそ、心から信頼することができます。</p>
+      <p>会社だけではなく、小さなコミュニティであっても、家族や夫婦であっても同じ。人と人が関わる時、何が心を動かし、自主的な行動を促すのでしょうか？　そのヒントをこの作品が教えてくれます。</p>
+      <p>TSUNAGU DAOが掲げるテーマの一つに「かっこいい大人を目指す」がありますが、まさに宮田社長は「かっこいい大人」そのものであり、未来を担う子どもたちに見せたい私たちの理想の生き方です。</p>
+      <p>この上映会を通じて、より多くの方々とこの想いを共有し、心で繋がっていきたいと思っています。<br>2026年11月1日（日）、枚方市で限定300名の方にご参加いただけます。<br>ぜひお席を確保してください。</p>
+    </div>
+  </section>
+
+</main>
+
+<div class="info-wrap">
+  <div class="info-card reveal">
+    <h3><small>上映会＆講演会</small>『愛でいけるやん〜宮田運輸がひらく道〜』</h3>
+    <dl class="info-grid">
+      <dt>上映日時</dt><dd>2026年11月1日（日）　開場 18:15　終了 21:30</dd>
+      <dt>会場</dt><dd>枚方市総合文化芸術センター　関西医大 小ホール<br>※京阪電車枚方市駅から徒歩5分</dd>
+      <dt>料金</dt><dd>大人：3,000円　中学生・高校生：1,500円　小学生以下：無料</dd>
+      <dt>定員</dt><dd>300名</dd>
+      <dt>主催</dt><dd>TSUNAGU DAO</dd>
+    </dl>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://evawat.com/event-entry-form?event=12732&event-facility=12748" target="_blank" rel="noopener">お申込みはこちら</a>
+      <a class="btn btn-secondary" href="https://line.me/ti/g2/Tg2B0uaSmN0TwpAlJzVsPUpFGev5h5Fsyea-fg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" rel="noopener">「心と心が繋がる自主上映会」<br>オープンチャットに参加</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="org">TSUNAGU DAO</div>
+  出演：宮田博文　宮田運輸の従業員の皆様 ほか<br>
+  監督/撮影・編集・構成：中務貴史 × 岩崎靖子<br>
+  映像技術/撮影・編集：小野敬広　撮影サポート：石川真喜子・月森加奈子<br>
+  音楽：溝渕大智　制作：トキノツカサ企画＆E・Eプロジェクト<br>
+  配給：トキノツカサ企画　NPO法人ハートオブミラクル　一般社団法人こどもミュージアムプロジェクト協会<br>
+  制作協力：ホットムーバー
+</footer>
+
+<script>
+  // Countdown to the screening date (days-until / in-progress / ended), refreshed hourly
+  (function(){
+    var start = new Date("2026-11-01T18:15:00+09:00").getTime();
+    var end = new Date("2026-11-01T21:30:00+09:00").getTime();
+    var el = document.getElementById('countdown');
+
+    function update(){
+      var now = Date.now();
+
+      if(now >= end){
+        el.textContent = '開催終了';
+        return;
+      }
+
+      if(now >= start){
+        el.textContent = '開催中';
+        return;
+      }
+
+      var days = Math.ceil((start - now) / (1000 * 60 * 60 * 24));
+      el.innerHTML = days + '<span>日</span>';
+    }
+
+    update();
+    setInterval(update, 60 * 60 * 1000);
+  })();
+
+  // Scroll reveal
+  (function(){
+    var items = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){
+      items.forEach(function(el){ el.classList.add('is-visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    items.forEach(function(el){ io.observe(el); });
+  })();
+</script>
+
+</body>
+</html>

@@ -524,6 +524,15 @@ PUBLICATION CHECKLIST
     var start = new Date("2026-11-01T18:15:00+09:00").getTime();
     var end = new Date("2026-11-01T21:30:00+09:00").getTime();
     var el = document.getElementById('countdown');
+    var DAY_MS = 24 * 60 * 60 * 1000;
+    var JST_OFFSET_MS = 9 * 60 * 60 * 1000;
+
+    function jstMidnight(ms){
+      var jstDate = new Date(ms + JST_OFFSET_MS);
+      return Date.UTC(jstDate.getUTCFullYear(), jstDate.getUTCMonth(), jstDate.getUTCDate()) - JST_OFFSET_MS;
+    }
+
+    var eventMidnight = jstMidnight(start);
 
     function update(){
       var now = Date.now();
@@ -538,7 +547,7 @@ PUBLICATION CHECKLIST
         return;
       }
 
-      var days = Math.ceil((start - now) / (1000 * 60 * 60 * 24));
+      var days = Math.round((eventMidnight - jstMidnight(now)) / DAY_MS);
       el.innerHTML = days + '<span>日</span>';
     }
 
